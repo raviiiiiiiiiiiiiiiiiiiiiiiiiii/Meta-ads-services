@@ -2,65 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Meta Ads Services — Subodh Sonone</title>
-  <meta name="description" content="Subodh Sonone helps small businesses and freelancers grow with high-ROI Meta (Facebook & Instagram) ads. See results, skills, reviews, and contact." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0c10; --card:#121318; --muted:#9aa0a6; --text:#e8eaed; --brand:#22c55e; --accent:#60a5fa;
-      --shadow: 0 10px 25px rgba(0,0,0,.35); --radius: 18px;
+      --bg:#0b0c10; --card:#121318; --muted:#9aa0a6; --text:#e8eaed; --brand:#22c55e;
+      --shadow:0 10px 25px rgba(0,0,0,.35); --radius:18px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1120px,92%);margin-inline:auto}
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,12,16,.9), rgba(11,12,16,.65));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    nav .brand{display:flex;gap:12px;align-items:center;font-weight:700}
-    .avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15)}
-    .navlinks{display:flex;gap:18px}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:12px;background:#151720}
-    .btn:hover{border-color:rgba(255,255,255,.25)}
-    .btn.brand{background:linear-gradient(135deg,#22c55e,#16a34a);border:none;color:#07110a;box-shadow:0 6px 20px rgba(34,197,94,.35);font-weight:700}
-    .btn.ghost{background:transparent}
-    .hero{padding:56px 0 28px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero .card{padding:28px}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    .kpi{padding:16px;border-radius:14px;background:#0f1015;border:1px solid rgba(255,255,255,.06);text-align:center}
-    .kpi b{font-size:1.25rem}
-    h1{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 8px}
-    h2{font-size:1.6rem;margin:0 0 14px}
-    p{color:var(--muted);line-height:1.6}
-    .stack{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
-    .chip{padding:8px 12px;border-radius:999px;background:#0f1117;border:1px solid rgba(255,255,255,.08);font-size:.9rem}
-    section{padding:36px 0}
-    .grid{display:grid;gap:18px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media(max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.06)}
-    .section-card{padding:22px}
-    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.5}
+
+    .container{width:min(1120px,92%);margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,12,16,.85);backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 0;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;
+    }
+    .avatar{
+      width:38px;height:38px;border-radius:50%;object-fit:cover;
+      border:2px solid rgba(255,255,255,.15);
+    }
+
+    /* NAV LINKS MOBILE */
+    .navlinks{
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
+    }
+    @media(max-width:640px){
+      .navlinks{
+        gap:6px;
+      }
+      .btn{
+        padding:8px 10px;font-size:.82rem;
+      }
+    }
+
+    .btn{
+      padding:10px 14px;border-radius:12px;
+      background:#151720;border:1px solid rgba(255,255,255,.12);
+      color:var(--text);text-decoration:none;white-space:nowrap;
+    }
+    .btn.brand{
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      border:none;color:#07110a;font-weight:700;
+    }
+
+    section{padding:32px 0}
+
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+    }
+
+    /* HERO GRID FIXED */
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    }
+    @media(max-width:800px){
+      .hero-grid{grid-template-columns:1fr;gap:16px}
+    }
+
+    h1{font-size:2rem;margin-bottom:10px}
+    @media(max-width:640px){h1{font-size:1.6rem}}
+
+    h2{font-size:1.45rem;margin-bottom:12px}
+
     .muted{color:var(--muted)}
-    .link{color:#a5b4fc}
-    .badge{font-size:.78rem;padding:6px 10px;border-radius:999px;background:#0f1117;border:1px solid rgba(255,255,255,.1)}
-    /* 9:16 responsive video frame */
-    .video-wrap{position:relative;width:100%;aspect-ratio:9/16;background:#0d0f14;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-    .video-wrap iframe,.video-wrap video{position:absolute;inset:0;width:100%;height:100%}
-    /* Contact CTA */
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
-    /* Floating WhatsApp */
-    .wa-fab{position:fixed;right:18px;bottom:18px;background:#22c55e;border:none;color:#06240f;border-radius:999px;padding:0;box-shadow:0 12px 30px rgba(34,197,94,.4);z-index:60;width:56px;height:56px;display:grid;place-items:center}
-    .wa-fab svg{width:26px;height:26px}
-    .wa-fab:active{transform:scale(.98)}
+
+    .kpis{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px;
+    }
+    .kpi{
+      padding:14px;text-align:center;border-radius:14px;
+      background:#0f1015;border:1px solid rgba(255,255,255,.06);
+    }
+    @media(max-width:640px){
+      .kpis{grid-template-columns:1fr 1fr;gap:8px}
+      .kpi:last-child{grid-column:1/3}
+    }
+
+    /* SKILLS */
+    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{
+      background:#0f1117;border:1px solid rgba(255,255,255,.08);
+      padding:7px 10px;border-radius:20px;font-size:.85rem;
+    }
+
+    /* GALLERY GRID */
+    .grid{display:grid;gap:14px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:800px){.cols-3{grid-template-columns:1fr 1fr}}
+    @media(max-width:500px){.cols-3{grid-template-columns:1fr}}
+
+    .gallery img{
+      width:100%;height:100%;object-fit:cover;border-radius:12px;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    /* VIDEO 9:16 */
+    .video-wrap{
+      width:100%;aspect-ratio:9/16;border-radius:16px;
+      overflow:hidden;border:1px solid rgba(255,255,255,.08);
+      background:#0d0f14;
+    }
+    iframe{width:100%;height:100%;border:0}
+
+    /* WHATSAPP FLOAT BUTTON */
+    .wa-fab{
+      position:fixed;right:18px;bottom:18px;z-index:80;
+      width:56px;height:56px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#22c55e;color:#06240f;
+      box-shadow:0 10px 25px rgba(34,197,94,.4);
+    }
+    .wa-fab svg{width:28px;height:28px}
+
+    footer{
+      padding:32px 0;text-align:center;color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:20px;
+    }
   </style>
 </head>
 <body>
@@ -68,155 +140,120 @@
 <header>
   <nav class="container">
     <div class="brand">
-      <img class="avatar" src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="Subodh" />
-      <span>Meta Ads Services</span>
+      <img class="avatar" src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
+      Meta Ads Services
     </div>
+
     <div class="navlinks">
-      <a class="btn ghost" href="#results">Results</a>
-      <a class="btn ghost" href="#skills">Skills</a>
-      <a class="btn ghost" href="#reviews">Reviews</a>
-      <a class="btn ghost" href="#video">Testimonial</a>
-      <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20I%27m%20interested%20in%20Meta%20Ads." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="#results">Results</a>
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#reviews">Reviews</a>
+      <a class="btn" href="#video">Testimonial</a>
+      <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh">WhatsApp</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="card">
-        <span class="badge">Advertising / Marketing</span>
-        <h1>Meta Ads that actually convert.</h1>
-        <p>Hi, I’m <b>Subodh Sonone</b>. I help small businesses, freelancers, and local brands grow with data-driven Facebook & Instagram ads — from strategy to creatives to optimization.</p>
-        <div class="kpis">
-          <div class="kpi"><b>50+ </b><div class="muted">Campaigns Managed</div></div>
-          <div class="kpi"><b>₹X L+</b><div class="muted">Ad Spend Handled</div></div>
-          <div class="kpi"><b>Indore</b><div class="muted">Based, Pan-India</div></div>
-        </div>
-        <div class="cta">
-          <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20send%20your%20pricing%20and%20recent%20results." target="_blank" rel="noopener">Get Proposal</a>
-          <a class="btn" href="https://linktr.ee/metasubodh" target="_blank" rel="noopener">All Links</a>
-          <a class="btn" href="https://drive.google.com/drive/folders/13ioHxkuWylvZeRFO9QVvBlVT121mBFHn?usp=sharing" target="_blank" rel="noopener">Drive Folder</a>
-        </div>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="card">
+      <h1>Meta Ads that actually convert.</h1>
+      <p>I'm <b>Subodh Sonone</b>. I help small businesses and freelancers grow using performance-driven Facebook & Instagram ads.</p>
+
+      <div class="kpis">
+        <div class="kpi"><b>50+</b><div class="muted">Campaigns</div></div>
+        <div class="kpi"><b>₹X L+</b><div class="muted">Ad Spend</div></div>
+        <div class="kpi"><b>Indore</b><div class="muted">Pan-India</div></div>
       </div>
-      <div class="card section-card">
-        <div class="section-head">
-          <h2 id="skills">Skills</h2>
-        </div>
-        <p class="muted">End-to-end Meta ads execution with creative testing and tight reporting.</p>
-        <div class="stack">
-          <span class="chip">Meta Ads Strategy</span>
-          <span class="chip">Campaign Structure</span>
-          <span class="chip">Pixel & Events</span>
-          <span class="chip">Lead Gen & Sales</span>
-          <span class="chip">Audience Research</span>
-          <span class="chip">Creatives & Hooks</span>
-          <span class="chip">A/B Testing</span>
-          <span class="chip">ROAS Optimization</span>
-          <span class="chip">WhatsApp Funnels</span>
-          <span class="chip">Reporting & Insights</span>
-        </div>
+
+      <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20send%20pricing">Get Proposal</a>
+        <a class="btn" href="https://drive.google.com/drive/folders/13ioHxkuWylvZeRFO9QVvBlVT121mBFHn?usp=sharing">Drive Folder</a>
       </div>
     </div>
-  </section>
 
-  <!-- RESULTS / PORTFOLIO -->
-  <section id="results">
-    <div class="container card section-card">
-      <div class="section-head">
-        <h2>Results & Portfolio</h2>
-        <a class="link" href="https://www.instagram.com/metasubodh1/" target="_blank" rel="noopener">Instagram @metasubodh1 →</a>
-      </div>
-      <div class="grid cols-3 gallery">
-        <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="Campaign Result 1">
-        <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="Campaign Result 2">
-        <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="Campaign Result 3">
-      </div>
-      <p class="muted" style="margin-top:10px">Full proofs, creatives, and sheets inside the <a class="link" href="https://drive.google.com/drive/folders/13ioHxkuWylvZeRFO9QVvBlVT121mBFHn?usp=sharing" target="_blank" rel="noopener">Drive folder</a>.</p>
-    </div>
-  </section>
+    <div class="card">
+      <h2 id="skills">Skills</h2>
+      <p class="muted">End-to-end Meta ads execution.</p>
 
-  <!-- REVIEWS (WhatsApp screenshots) -->
-  <section id="reviews">
-    <div class="container card section-card">
-      <div class="section-head">
-        <h2>Client Reviews</h2>
-        <span class="muted">Real WhatsApp screenshots</span>
-      </div>
-      <div class="grid cols-3 gallery">
-        <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="WhatsApp Review 1">
-        <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="WhatsApp Review 2">
-        <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="WhatsApp Review 3">
+      <div class="stack">
+        <span class="chip">Meta Ads Strategy</span>
+        <span class="chip">Pixel Setup</span>
+        <span class="chip">Lead Gen</span>
+        <span class="chip">A/B Testing</span>
+        <span class="chip">ROAS Optimization</span>
+        <span class="chip">Creatives</span>
+        <span class="chip">Audience Research</span>
+        <span class="chip">WhatsApp Funnels</span>
       </div>
     </div>
-  </section>
 
-  <!-- VIDEO TESTIMONIAL (9:16) -->
-  <section id="video">
-    <div class="container card section-card">
-      <div class="section-head">
-        <h2>Video Testimonial</h2>
-        <span class="badge">9:16</span>
-      </div>
+  </div>
+</section>
 
-      <!-- YouTube Shorts embed (converted to /embed) -->
-      <div class="video-wrap" style="margin-bottom:14px">
-        <iframe 
-          src="https://www.youtube.com/embed/myV4Wgl8oTA"
-          title="Client Testimonial"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer">
-        </iframe>
-      </div>
-
-      <!-- Optional: Direct .mp4 player (hide if not needed) -->
-      <div class="video-wrap" style="display:none">
-        <video controls playsinline preload="metadata" poster="">
-          <source src="https://your-cdn.com/testimonial.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <p class="muted">Want this self-hosted for faster loads? Upload an .mp4 to Cloudinary/S3 and switch on the second player.</p>
+<section id="results">
+  <div class="container card">
+    <h2>Results & Portfolio</h2>
+    <div class="grid cols-3 gallery" style="margin-top:14px">
+      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
+      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
+      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section>
-    <div class="container card section-card">
-      <div class="section-head">
-        <h2>Work with Subodh</h2>
-        <span class="muted">Quick response on WhatsApp</span>
-      </div>
-      <div class="cta">
-        <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20let%27s%20discuss%20Meta%20ads%20for%20my%20business." target="_blank" rel="noopener">Message on WhatsApp</a>
-        <a class="btn" href="mailto:hello@metasubodh.com">hello@metasubodh.com</a>
-        <a class="btn" href="https://linktr.ee/metasubodh" target="_blank" rel="noopener">Linktree</a>
-      </div>
+<section id="reviews">
+  <div class="container card">
+    <h2>Client Reviews</h2>
+    <div class="grid cols-3 gallery" style="margin-top:14px">
+      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
+      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
+      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="video">
+  <div class="container card">
+    <h2>Video Testimonial</h2>
+    <div class="video-wrap" style="margin-top:14px">
+      <iframe 
+        src="https://www.youtube.com/embed/myV4Wgl8oTA"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container card">
+    <h2>Work With Subodh</h2>
+
+    <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px">
+      <a class="btn brand" href="https://wa.me/918959660907">WhatsApp</a>
+      <a class="btn" href="mailto:metasubodh@gmail.com">metasubodh@gmail.com</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
-  <div class="container">
-    <div>© <span id="y"></span> Meta Ads Services — Subodh Sonone</div>
-    <div class="muted">Indore, India • <a class="link" href="https://www.instagram.com/metasubodh1/" target="_blank" rel="noopener">Instagram</a></div>
-  </div>
+  © <span id="y"></span> Meta Ads Services — Subodh Sonone
 </footer>
 
-<!-- Floating WhatsApp icon button -->
-<a class="wa-fab" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20I%20need%20help%20with%20Meta%20ads." target="_blank" aria-label="Chat on WhatsApp" rel="noopener">
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M16 3.5A12.5 12.5 0 0 0 4.23 22.03L3 29l7.12-1.86A12.5 12.5 0 1 0 16 3.5Z" stroke="currentColor" stroke-width="2"/>
-    <path d="M10.5 12.5c0 4.14 3.36 7.5 7.5 7.5.9 0 1.76-.16 2.56-.46.23-.09.49-.02.65.16l1.8 2.06c.3.34.83.3 1.06-.08A10 10 0 1 0 10.5 12.5Z" fill="currentColor"/>
+<!-- Floating WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/918959660907?text=Hi%20Subodh">
+  <svg viewBox="0 0 32 32" fill="currentColor">
+    <path d="M16 3.5A12.5 12.5 0 0 0 4.23 22.03L3 29l7.12-1.86A12.5 12.5 0 1 0 16 3.5Z"/>
   </svg>
 </a>
 
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById("y").innerText = new Date().getFullYear();
 </script>
+
 </body>
-  </html>
+</html>
