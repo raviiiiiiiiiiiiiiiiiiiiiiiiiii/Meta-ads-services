@@ -5,145 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Meta Ads Services — Subodh Sonone</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg:#0b0c10; --card:#121318; --muted:#9aa0a6; --text:#e8eaed; --brand:#22c55e;
-      --shadow:0 10px 25px rgba(0,0,0,.35); --radius:18px;
-    }
+    :root{--bg:#0b0c10;--card:#121318;--muted:#9aa0a6;--text:#e8eaed;--brand:#22c55e;--shadow:0 10px 25px rgba(0,0,0,.35);--radius:18px}
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.5}
-
     .container{width:min(1120px,92%);margin:auto}
-
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(11,12,16,.85);backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    nav{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:12px 0;
-    }
-
-    .brand{
-      display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;
-    }
-    .avatar{
-      width:38px;height:38px;border-radius:50%;object-fit:cover;
-      border:2px solid rgba(255,255,255,.15);
-    }
-
-    /* NAV LINKS MOBILE */
-    .navlinks{
-      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
-    }
-    @media(max-width:640px){
-      .navlinks{
-        gap:6px;
-      }
-      .btn{
-        padding:8px 10px;font-size:.82rem;
-      }
-    }
-
-    .btn{
-      padding:10px 14px;border-radius:12px;
-      background:#151720;border:1px solid rgba(255,255,255,.12);
-      color:var(--text);text-decoration:none;white-space:nowrap;
-    }
-    .btn.brand{
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      border:none;color:#07110a;font-weight:700;
-    }
-
+    header{position:sticky;top:0;z-index:50;background:rgba(11,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .brand{font-weight:700;font-size:1.05rem} /* text-only brand */
+    .navlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{padding:10px 14px;border-radius:12px;background:#151720;border:1px solid rgba(255,255,255,.12);color:var(--text);text-decoration:none;white-space:nowrap}
+    .btn.brand{background:linear-gradient(135deg,#22c55e,#16a34a);border:none;color:#07110a;font-weight:700}
+    @media(max-width:640px){.btn{padding:8px 10px;font-size:.84rem}.navlinks{gap:6px}}
     section{padding:32px 0}
-
-    .card{
-      background:var(--card);border:1px solid rgba(255,255,255,.06);
-      border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
-    }
-
-    /* HERO GRID FIXED */
-    .hero-grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:20px;
-    }
-    @media(max-width:800px){
-      .hero-grid{grid-template-columns:1fr;gap:16px}
-    }
-
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:16px}}
     h1{font-size:2rem;margin-bottom:10px}
     @media(max-width:640px){h1{font-size:1.6rem}}
-
     h2{font-size:1.45rem;margin-bottom:12px}
-
     .muted{color:var(--muted)}
-
-    .kpis{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px;
-    }
-    .kpi{
-      padding:14px;text-align:center;border-radius:14px;
-      background:#0f1015;border:1px solid rgba(255,255,255,.06);
-    }
-    @media(max-width:640px){
-      .kpis{grid-template-columns:1fr 1fr;gap:8px}
-      .kpi:last-child{grid-column:1/3}
-    }
-
-    /* SKILLS */
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+    .kpi{padding:14px;text-align:center;border-radius:14px;background:#0f1015;border:1px solid rgba(255,255,255,.06)}
+    @media(max-width:640px){.kpis{grid-template-columns:1fr 1fr;gap:8px}.kpi:last-child{grid-column:1/3}}
     .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip{
-      background:#0f1117;border:1px solid rgba(255,255,255,.08);
-      padding:7px 10px;border-radius:20px;font-size:.85rem;
-    }
-
-    /* GALLERY GRID */
+    .chip{background:#0f1117;border:1px solid rgba(255,255,255,.08);padding:7px 10px;border-radius:20px;font-size:.85rem}
     .grid{display:grid;gap:14px}
-    .cols-3{grid-template-columns:repeat(3,1fr)}
-    @media(max-width:800px){.cols-3{grid-template-columns:1fr 1fr}}
-    @media(max-width:500px){.cols-3{grid-template-columns:1fr}}
-
-    .gallery img{
-      width:100%;height:100%;object-fit:cover;border-radius:12px;
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    /* VIDEO 9:16 */
-    .video-wrap{
-      width:100%;aspect-ratio:9/16;border-radius:16px;
-      overflow:hidden;border:1px solid rgba(255,255,255,.08);
-      background:#0d0f14;
-    }
+    .cols-2{grid-template-columns:1fr 1fr}
+    @media(max-width:640px){.cols-2{grid-template-columns:1fr}}
+    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+    .video-wrap{width:100%;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0d0f14}
     iframe{width:100%;height:100%;border:0}
-
-    /* WHATSAPP FLOAT BUTTON */
-    .wa-fab{
-      position:fixed;right:18px;bottom:18px;z-index:80;
-      width:56px;height:56px;border-radius:50%;
-      display:grid;place-items:center;
-      background:#22c55e;color:#06240f;
-      box-shadow:0 10px 25px rgba(34,197,94,.4);
-    }
+    .wa-fab{position:fixed;right:18px;bottom:18px;z-index:80;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#22c55e;color:#06240f;box-shadow:0 10px 25px rgba(34,197,94,.4)}
     .wa-fab svg{width:28px;height:28px}
-
-    footer{
-      padding:32px 0;text-align:center;color:var(--muted);
-      border-top:1px solid rgba(255,255,255,.08);
-      margin-top:20px;
-    }
+    footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:20px}
   </style>
 </head>
 <body>
 
 <header>
   <nav class="container">
-    <div class="brand">
-      <img class="avatar" src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
-      Meta Ads Services
-    </div>
-
+    <div class="brand">Meta Ads Services</div>
     <div class="navlinks">
       <a class="btn" href="#results">Results</a>
       <a class="btn" href="#skills">Skills</a>
@@ -158,14 +60,13 @@
 
 <section class="hero">
   <div class="container hero-grid">
-
     <div class="card">
       <h1>Meta Ads that actually convert.</h1>
       <p>I'm <b>Subodh Sonone</b>. I help small businesses and freelancers grow using performance-driven Facebook & Instagram ads.</p>
 
       <div class="kpis">
-        <div class="kpi"><b>50+</b><div class="muted">Campaigns</div></div>
-        <div class="kpi"><b>₹X L+</b><div class="muted">Ad Spend</div></div>
+        <div class="kpi"><b>500+</b><div class="muted">Campaigns</div></div>
+        <div class="kpi"><b>₹50L+</b><div class="muted">Ad Spend</div></div>
         <div class="kpi"><b>Indore</b><div class="muted">Pan-India</div></div>
       </div>
 
@@ -178,7 +79,6 @@
     <div class="card">
       <h2 id="skills">Skills</h2>
       <p class="muted">End-to-end Meta ads execution.</p>
-
       <div class="stack">
         <span class="chip">Meta Ads Strategy</span>
         <span class="chip">Pixel Setup</span>
@@ -190,17 +90,15 @@
         <span class="chip">WhatsApp Funnels</span>
       </div>
     </div>
-
   </div>
 </section>
 
 <section id="results">
   <div class="container card">
     <h2>Results & Portfolio</h2>
-    <div class="grid cols-3 gallery" style="margin-top:14px">
-      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
-      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
-      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
+    <div class="grid cols-2 gallery" style="margin-top:14px">
+      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="Result A">
+      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="Result B">
     </div>
   </div>
 </section>
@@ -208,10 +106,9 @@
 <section id="reviews">
   <div class="container card">
     <h2>Client Reviews</h2>
-    <div class="grid cols-3 gallery" style="margin-top:14px">
-      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
-      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg">
-      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg">
+    <div class="grid cols-2 gallery" style="margin-top:14px">
+      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="Review 1">
+      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="Review 2">
     </div>
   </div>
 </section>
@@ -220,8 +117,10 @@
   <div class="container card">
     <h2>Video Testimonial</h2>
     <div class="video-wrap" style="margin-top:14px">
+      <!-- kept exactly as working; 9:16 -->
       <iframe 
         src="https://www.youtube.com/embed/myV4Wgl8oTA"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </div>
   </div>
@@ -230,7 +129,6 @@
 <section>
   <div class="container card">
     <h2>Work With Subodh</h2>
-
     <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px">
       <a class="btn brand" href="https://wa.me/918959660907">WhatsApp</a>
       <a class="btn" href="mailto:metasubodh@gmail.com">metasubodh@gmail.com</a>
@@ -246,7 +144,7 @@
 
 <!-- Floating WhatsApp FAB -->
 <a class="wa-fab" href="https://wa.me/918959660907?text=Hi%20Subodh">
-  <svg viewBox="0 0 32 32" fill="currentColor">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
     <path d="M16 3.5A12.5 12.5 0 0 0 4.23 22.03L3 29l7.12-1.86A12.5 12.5 0 1 0 16 3.5Z"/>
   </svg>
 </a>
@@ -254,6 +152,5 @@
 <script>
   document.getElementById("y").innerText = new Date().getFullYear();
 </script>
-
 </body>
 </html>
