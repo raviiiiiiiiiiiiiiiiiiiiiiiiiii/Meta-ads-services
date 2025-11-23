@@ -5,39 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Meta Ads Services — Subodh</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{--bg:#0b0c10;--card:#121318;--muted:#9aa0a6;--text:#e8eaed;--brand:#22c55e;--shadow:0 10px 25px rgba(0,0,0,.35);--radius:18px}
     *{box-sizing:border-box;margin:0;padding:0}
     body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.5}
     .container{width:min(1120px,92%);margin:auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,12,16,.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 0;
+    }
+
     .brand{font-weight:700;font-size:1.05rem}
-    .navlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .btn{padding:10px 14px;border-radius:12px;background:#151720;border:1px solid rgba(255,255,255,.12);color:var(--text);text-decoration:none;white-space:nowrap}
-    .btn.brand{background:linear-gradient(135deg,#22c55e,#16a34a);border:none;color:#07110a;font-weight:700}
 
-    /* ---------------------------------------------------- */
-    /* MOBILE HAMBURGER (same logic/style from sample)      */
-    /* ---------------------------------------------------- */
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:5px;
-      cursor:pointer;
+    /* desktop nav (unchanged) */
+    .navlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
-    .hamburger span{
-      width:26px;height:3px;background:#fff;border-radius:3px;transition:.25s;
-    }
-    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-    .hamburger.open span:nth-child(2){opacity:0}
-    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      background:#151720;
+      border:1px solid rgba(255,255,255,.12);
+      color:var(--text);
+      text-decoration:none;
+      white-space:nowrap
+    }
+
+    .btn.brand{
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      border:none;
+      color:#07110a;
+      font-weight:700
+    }
+
+    /* -----------------------------------------------------
+       FORCE DISABLE MOBILE NAV ON TABLETS + DESKTOP
+       ----------------------------------------------------- */
+    @media(min-width:641px){
+      #mobileNav{display:none !important;}
+      .hamburger{display:none !important;}
+    }
+
+    /* -----------------------------------------------------
+       PHONE ONLY (max-width:640px)
+       ----------------------------------------------------- */
     @media(max-width:640px){
-      .navlinks{display:none}
 
-      .hamburger{display:flex}
+      /* hide desktop nav on phone only */
+      .navlinks{display:none;}
 
+      /* hamburger */
+      .hamburger{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+      }
+      .hamburger span{
+        width:26px;height:3px;
+        background:#fff;
+        border-radius:3px;
+        transition:.25s;
+      }
+      .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .hamburger.open span:nth-child(2){opacity:0}
+      .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+      /* mobile menu dropdown */
       #mobileNav{
         display:none;
         position:absolute;
@@ -45,27 +94,23 @@
         right:12px;
         background:#121318;
         padding:14px;
-        border-radius:14px;
+        border-radius:12px;
         box-shadow:0 10px 25px rgba(0,0,0,.35);
         min-width:180px;
-        animation:drop .25s ease-out;
-        z-index:200;
+        flex-direction:column;
+        z-index:100;
       }
 
-      #mobileNav.active{display:block}
+      #mobileNav.active{display:flex;}
 
       #mobileNav a{
         display:block;
         margin-bottom:10px;
         text-decoration:none;
       }
-
-      @keyframes drop{
-        from{opacity:0;transform:translateY(-6px)}
-        to{opacity:1;transform:translateY(0)}
-      }
     }
-    /* ---------------------------------------------------- */
+
+    /* ------- EVERYTHING BELOW HERE IS FROM YOUR ORIGINAL FILE, UNTOUCHED ------- */
 
     section{padding:32px 0}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
@@ -91,14 +136,15 @@
     footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:20px}
   </style>
 </head>
+
 <body>
 
 <header>
-  <nav class="container">
+  <nav class="container" style="position:relative;">
 
     <div class="brand">Meta Ads Services</div>
 
-    <!-- MOBILE HAMBURGER -->
+    <!-- HAMBURGER (phone only) -->
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -111,17 +157,15 @@
       <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh">WhatsApp</a>
     </div>
 
-    <!-- MOBILE DROPDOWN -->
+    <!-- MOBILE MENU (phone only) -->
     <div id="mobileNav">
       <a class="btn" href="#skills">Skills</a>
       <a class="btn" href="#reviews">Reviews</a>
       <a class="btn" href="#video">Testimonial</a>
       <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh">WhatsApp</a>
     </div>
-
   </nav>
 </header>
-
 
 <main>
 
@@ -161,7 +205,6 @@
   </div>
 </section>
 
-
 <section id="reviews">
   <div class="container card">
     <h2>Client Reviews</h2>
@@ -171,7 +214,6 @@
     </div>
   </div>
 </section>
-
 
 <section id="video">
   <div class="container card">
@@ -185,7 +227,6 @@
     </div>
   </div>
 </section>
-
 
 <section>
   <div class="container card">
@@ -203,7 +244,6 @@
   © <span id="y"></span> Meta Ads Services — Subodh
 </footer>
 
-
 <a class="wa-fab" href="https://wa.me/918959660907?text=Hi%20Subodh">
   <svg viewBox="0 0 32 32" fill="currentColor">
     <path d="M16 3.5A12.5 12.5 0 0 0 4.23 22.03L3 29l7.12-1.86A12.5 12.5 0 1 0 16 3.5Z"/>
@@ -213,21 +253,27 @@
 <script>
 document.getElementById("y").innerText = new Date().getFullYear();
 
-const ham = document.getElementById("hamburger");
-const menu = document.getElementById("mobileNav");
+/* phone-only hamburger logic */
+(function(){
+  const ham = document.getElementById("hamburger");
+  const menu = document.getElementById("mobileNav");
+  if (!ham || !menu) return;
 
-ham.addEventListener("click", ()=>{
-  ham.classList.toggle("open");
-  menu.classList.toggle("active");
-});
-
-// tap outside to close
-document.addEventListener("click", (e)=>{
-  if(!e.target.closest("nav")){
+  function closeMenu(){
     ham.classList.remove("open");
     menu.classList.remove("active");
   }
-});
+
+  ham.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    ham.classList.toggle("open");
+    menu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e)=>{
+    if(!e.target.closest("nav")) closeMenu();
+  });
+})();
 </script>
 
 </body>
