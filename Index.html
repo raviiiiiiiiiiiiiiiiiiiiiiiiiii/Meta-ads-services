@@ -1,280 +1,557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Meta Ads Services — Subodh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WifyMedia — Premium Agency Landing</title>
+  <meta name="description" content="We Serve Like A Wife — Meta Ads, Instagram Growth, Performance Marketing" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    :root{--bg:#0b0c10;--card:#121318;--muted:#9aa0a6;--text:#e8eaed;--brand:#22c55e;--shadow:0 10px 25px rgba(0,0,0,.35);--radius:18px}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.5}
-    .container{width:min(1120px,92%);margin:auto}
-
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(11,12,16,.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.06)
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffffcc;
+      --glass-border: rgba(255,255,255,0.6);
+      --accent-1: #4d7cfe;
+      --accent-2: #b146ff;
+      --muted:#6b7280;
+      --glass-blur: 18px;
+      --radius: 28px;
+      --shadow-lg: 0 10px 30px rgba(18,24,40,0.08);
+      --glass-outline: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#f6f8fb 0%, #eef2f8 100%);
+      color: #0b1220;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+      overflow-y: auto;
     }
 
-    nav{
+    /* Container */
+    .wrap{max-width:1100px;margin:28px auto;padding:28px}
+
+    /* Header / Hero */
+    header.hero{
       display:flex;
-      justify-content:space-between;
+      gap:28px;
       align-items:center;
-      padding:12px 0;
+      justify-content:space-between;
+      margin-bottom:28px;
+    }
+    .logo {
+      display:flex;gap:12px;align-items:center;
+    }
+    .logo .mark{
+      width:56px;height:56px;border-radius:14px;
+      background: conic-gradient(from 120deg,var(--accent-1),var(--accent-2));
+      box-shadow: 0 6px 20px rgba(77,124,254,0.12);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
+      font-size:20px;
+    }
+    .logo .title{
+      line-height:1;
+    }
+    .logo .title h1{margin:0;font-size:18px;font-weight:800;letter-spacing:-0.4px}
+    .logo .title p{margin:0;font-size:12px;color:var(--muted)}
+
+    .hero-card{
+      flex:1;
+      margin-left:18px;
+      padding:28px;
+      border-radius:var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid rgba(10,15,25,0.03);
+      position:relative;
+      overflow:hidden;
     }
 
-    .brand{font-weight:700;font-size:1.05rem}
+    .hero-left{max-width:62%}
+    .hero-right{text-align:right}
 
-    /* desktop nav (unchanged) */
-    .navlinks{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    .kicker{
+      font-weight:700;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;
+      display:inline-block;margin-bottom:8px;
+    }
+    .headline{
+      font-size:28px;font-weight:800;margin:0 0 10px;color:#071329;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .sub{
+      color:#3b4660;margin-bottom:18px;
     }
 
+    .cta-row{display:flex;gap:12px;align-items:center}
     .btn{
-      padding:10px 14px;
-      border-radius:12px;
-      background:#151720;
-      border:1px solid rgba(255,255,255,.12);
-      color:var(--text);
+      display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;border:0;cursor:pointer;
+      font-weight:700;font-size:14px;
+      background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      color:white;box-shadow: 0 8px 20px rgba(77,124,254,0.12);
       text-decoration:none;
-      white-space:nowrap
+    }
+    .btn.ghost{
+      background:transparent;color:var(--accent-1);border:1px solid rgba(77,124,254,0.12);
+      font-weight:600;
     }
 
-    .btn.brand{
-      background:linear-gradient(135deg,#22c55e,#16a34a);
-      border:none;
-      color:#07110a;
-      font-weight:700
+    /* Trust / Stats */
+    .stats{
+      margin:22px 0;
+      display:flex;gap:18px;align-items:center;
+    }
+    .stat-card{
+      flex:1;padding:16px;border-radius:18px;background:var(--card);box-shadow:var(--shadow-lg);
+      display:flex;align-items:center;gap:12px;backdrop-filter: blur(12px);
+      border:1px solid rgba(10,15,25,0.03);
+    }
+    .stat-num{font-weight:800;font-size:20px;color:#0b1220}
+    .stat-meta{font-size:13px;color:var(--muted)}
+
+    /* Services grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}
+    .service{
+      padding:20px;border-radius:22px;background:var(--card);box-shadow:var(--shadow-lg);
+      border:1px solid rgba(10,15,25,0.03);backdrop-filter: blur(8px);
+      transition:transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s;
+    }
+    .service:hover{transform:translateY(-8px);box-shadow: 0 18px 40px rgba(10,20,60,0.06)}
+    .service h3{margin:0 0 8px;font-size:16px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Team */
+    .team{margin:28px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .member{
+      padding:18px;border-radius:22px;background:var(--card);box-shadow:var(--shadow-lg);
+      display:flex;gap:14px;align-items:center;border:1px solid rgba(10,15,25,0.03);
+    }
+    .avatar{width:84px;height:84px;border-radius:50%;overflow:hidden;flex-shrink:0;box-shadow: 0 8px 30px rgba(16,24,40,0.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .member .meta h4{margin:0;font-size:16px}
+    .member .meta p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .socials{margin-top:10px;display:flex;gap:8px}
+
+    /* Pricing horizontal scroll */
+    .pricing-wrap{
+      margin:32px 0;padding:26px;border-radius:20px;background:linear-gradient(180deg,#ffffff, #fbfdff);box-shadow: 0 35px 70px rgba(12,20,40,0.06);
+    }
+    .pricing-track{
+      display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;
+      scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    }
+    .price-card{
+      min-width:260px;flex:0 0 64%; /* center-card default width bigger on mobile */
+      scroll-snap-align:center;
+      border-radius:28px;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.9));
+      box-shadow: 0 12px 30px rgba(16,24,40,0.06);
+      border: 1px solid rgba(9,12,20,0.04);
+      transition: transform .35s cubic-bezier(.2,.9,.3,1);
+      position:relative;
+    }
+    .price-card.small{flex:0 0 40%}
+    .price-title{font-weight:800;font-size:18px;margin:0 0 6px;color:#071329}
+    .price-cost{font-weight:900;font-size:28px;margin:0 0 6px;color:#0b1220}
+    .price-list{margin:12px 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+    .price-list li{padding:6px 0;border-bottom:1px solid rgba(10,15,25,0.03)}
+    .price-cta{display:block;margin-top:12px;padding:12px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800}
+    .price-cta.primary{background: linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white}
+    .price-cta.ghost{border:1px solid rgba(10,15,25,0.05);background:transparent;color:var(--accent-1)}
+
+    /* Why us */
+    .why{display:flex;gap:18px;align-items:center;margin:28px 0}
+    .why .item{flex:1;padding:16px;border-radius:16px;background:var(--card);box-shadow:var(--shadow-lg);text-align:center}
+    .why h4{margin:6px 0;color:#071329}
+    .why p{margin:0;color:var(--muted)}
+
+    /* Contact */
+    .contact{display:flex;flex-direction:column;gap:12px;align-items:center;padding:28px;border-radius:18px;background:linear-gradient(180deg,#ffffff,#f7fbff);box-shadow:var(--shadow-lg)}
+    .contact .bigcta{font-size:16px;font-weight:800;padding:14px 22px;border-radius:14px;text-decoration:none}
+    .contact .wh{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:40px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .wrap{padding:16px}
+      header.hero{flex-direction:column;align-items:flex-start;gap:12px}
+      .hero-left{max-width:100%}
+      .services{grid-template-columns:1fr;overflow:hidden}
+      .team{grid-template-columns:1fr}
+      .stat-card{flex-direction:column;align-items:flex-start}
+      .price-card{flex:0 0 80%}
+      .pricing-track{gap:12px}
+    }
+    @media (min-width:1200px){
+      .price-card{flex:0 0 36%}
+      .price-card.small{flex:0 0 28%}
+      .services{grid-template-columns:repeat(3,1fr)}
+      .team{grid-template-columns:repeat(3,1fr)}
     }
 
-    /* -----------------------------------------------------
-       FORCE DISABLE MOBILE NAV ON TABLETS + DESKTOP
-       ----------------------------------------------------- */
-    @media(min-width:641px){
-      #mobileNav{display:none !important;}
-      .hamburger{display:none !important;}
-    }
-
-    /* -----------------------------------------------------
-       PHONE ONLY (max-width:640px)
-       ----------------------------------------------------- */
-    @media(max-width:640px){
-
-      /* hide desktop nav on phone only */
-      .navlinks{display:none;}
-
-      /* hamburger */
-      .hamburger{
-        display:flex;
-        flex-direction:column;
-        gap:5px;
-        cursor:pointer;
-      }
-      .hamburger span{
-        width:26px;height:3px;
-        background:#fff;
-        border-radius:3px;
-        transition:.25s;
-      }
-      .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .hamburger.open span:nth-child(2){opacity:0}
-      .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-
-      /* mobile menu dropdown */
-      #mobileNav{
-        display:none;
-        position:absolute;
-        top:100%;
-        right:12px;
-        background:#121318;
-        padding:14px;
-        border-radius:12px;
-        box-shadow:0 10px 25px rgba(0,0,0,.35);
-        min-width:180px;
-        flex-direction:column;
-        z-index:100;
-      }
-
-      #mobileNav.active{display:flex;}
-
-      #mobileNav a{
-        display:block;
-        margin-bottom:10px;
-        text-decoration:none;
-      }
-    }
-
-    /* ------- EVERYTHING BELOW HERE IS FROM YOUR ORIGINAL FILE, UNTOUCHED ------- */
-
-    section{padding:32px 0}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:16px}}
-    h1{font-size:2rem;margin-bottom:10px}
-    @media(max-width:640px){h1{font-size:1.6rem}}
-    h2{font-size:1.45rem;margin-bottom:12px}
+    /* small touches */
+    a{text-decoration:none}
     .muted{color:var(--muted)}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
-    .kpi{padding:14px;text-align:center;border-radius:14px;background:#0f1015;border:1px solid rgba(255,255,255,.06)}
-    @media(max-width:640px){.kpis{grid-template-columns:1fr 1fr;gap:8px}.kpi:last-child{grid-column:1/3}}
-    .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip{background:#0f1117;border:1px solid rgba(255,255,255,.08);padding:7px 10px;border-radius:20px;font-size:.85rem}
-    .grid{display:grid;gap:14px}
-    .cols-2{grid-template-columns:1fr 1fr}
-    @media(max-width:640px){.cols-2{grid-template-columns:1fr}}
-    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
-    .video-wrap{width:100%;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0d0f14}
-    iframe{width:100%;height:100%;border:0}
-    .wa-fab{position:fixed;right:18px;bottom:18px;z-index:80;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#22c55e;color:#06240f;box-shadow:0 10px 25px rgba(34,197,94,.4)}
-    .wa-fab svg{width:28px;height:28px}
-    footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:20px}
+    .small{font-size:13px;color:var(--muted)}
   </style>
 </head>
-
 <body>
+  <div class="wrap">
 
-<header>
-  <nav class="container" style="position:relative;">
-
-    <div class="brand">Meta Ads Services</div>
-
-    <!-- HAMBURGER (phone only) -->
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- DESKTOP NAV (unchanged) -->
-    <div class="navlinks">
-      <a class="btn" href="#skills">Skills</a>
-      <a class="btn" href="#reviews">Reviews</a>
-      <a class="btn" href="#video">Testimonial</a>
-      <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh">WhatsApp</a>
-    </div>
-
-    <!-- MOBILE MENU (phone only) -->
-    <div id="mobileNav">
-      <a class="btn" href="#skills">Skills</a>
-      <a class="btn" href="#reviews">Reviews</a>
-      <a class="btn" href="#video">Testimonial</a>
-      <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh">WhatsApp</a>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="card">
-      <h1>Meta Ads that actually convert.</h1>
-      <p>I'm <b>Subodh</b>. I help small businesses and freelancers scale with performance-driven Facebook & Instagram ads.</p>
-
-      <div class="kpis">
-        <div class="kpi"><b>500+</b><div class="muted">Campaigns</div></div>
-        <div class="kpi"><b>₹50L+</b><div class="muted">Ad Spend</div></div>
-        <div class="kpi"><b>Indore</b><div class="muted">Pan-India</div></div>
+    <!-- Header / Hero -->
+    <header class="hero" aria-label="Hero">
+      <div class="logo" aria-hidden="true">
+        <div class="mark">W</div>
+        <div class="title">
+          <h1>wifymedia.in</h1>
+          <p>Committed. Caring. Result-Driven.</p>
+        </div>
       </div>
 
-      <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px">
-        <a class="btn brand" href="https://wa.me/918959660907?text=Hi%20Subodh%2C%20send%20pricing">Get Proposal</a>
-        <a class="btn" href="https://drive.google.com/drive/folders/13ioHxkuWylvZeRFO9QVvBlVT121mBFHn?usp=sharing">Drive Folder</a>
+      <div class="hero-card" role="region" aria-label="Hero card">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;">
+          <div class="hero-left">
+            <div class="kicker">We Serve Like A Wife</div>
+            <h2 class="headline">We Grow Brands With Precision.</h2>
+            <p class="sub">Meta Ads · Content · Performance-driven strategies — with full responsibility and honest execution.</p>
+
+            <div class="cta-row">
+              <a class="btn" href="https://wa.me/918959660907?text=Hello%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call." target="_blank" rel="noopener">WhatsApp — Book a Call</a>
+              <a class="btn ghost" href="#work">View Our Work</a>
+            </div>
+          </div>
+
+          <div class="hero-right small">
+            <div class="muted">Connect with us</div>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <a title="Email" href="mailto:metasubodh@gmail.com" class="small">Gmail</a>
+              <a title="WhatsApp" href="https://wa.me/918959660907" class="small" target="_blank" rel="noopener">WhatsApp</a>
+              <a title="Instagram" href="https://www.instagram.com/wifymedia" class="small" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats" aria-hidden="true">
+          <div class="stat-card">
+            <div>
+              <div class="stat-num" data-target="500">0+</div>
+              <div class="stat-meta">Clients Served</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <div class="stat-num" data-target="5000000">₹0</div>
+              <div class="stat-meta">Ad Spend Managed</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div>
+              <div class="stat-num" data-target="7">0+</div>
+              <div class="stat-meta">Years Experience</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </header>
 
-    <div class="card">
-      <h2 id="skills">Skills</h2>
-      <p class="muted">End-to-end Meta ads execution.</p>
-
-      <div class="stack">
-        <span class="chip">Meta Ads Strategy</span>
-        <span class="chip">Pixel Setup</span>
-        <span class="chip">Lead Gen</span>
-        <span class="chip">A/B Testing</span>
-        <span class="chip">ROAS Optimization</span>
-        <span class="chip">Creatives</span>
-        <span class="chip">Audience Research</span>
-        <span class="chip">WhatsApp Funnels</span>
+    <!-- Services -->
+    <section aria-labelledby="services-title">
+      <h3 id="services-title" style="margin:0 0 12px;font-size:18px">We help businesses grow using -</h3>
+      <div class="services">
+        <div class="service">
+          <h3>Meta Ads</h3>
+          <p>Performance-first Meta campaigns built to drive revenue, not just impressions.</p>
+        </div>
+        <div class="service">
+          <h3>Content</h3>
+          <p>High-conversion creatives — video + poster ads designed to sell.</p>
+        </div>
+        <div class="service">
+          <h3>Performance-driven strategies</h3>
+          <p>Testing framework, scaling playbooks and constant optimisation.</p>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Team -->
+    <section id="work" aria-labelledby="team-title">
+      <h3 id="team-title" style="margin:12px 0 18px;font-size:18px">Meet Our Team</h3>
+      <div class="team">
+        <!-- Subodh -->
+        <article class="member" aria-label="Subodh Sonone">
+          <div class="avatar"><img src="https://i.ibb.co/7t5Bz3Xw/Screenshot-20251211-121146-Instagram-1.jpg" alt="Subodh Sonone"></div>
+          <div class="meta">
+            <h4>Subodh Sonone</h4>
+            <p class="small"><strong>Founder</strong> · Meta Ads Strategist</p>
+            <p class="muted small">On a mission to build something valueable in Meta Ads Marketing</p>
+            <div class="socials">
+              <a href="mailto:metasubodh@gmail.com" title="Email">Gmail</a>
+              <a href="https://wa.me/918959660907" title="WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+              <a href="https://www.instagram.com/wifymedia" title="Instagram" target="_blank" rel="noopener">IG</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Krishna -->
+        <article class="member" aria-label="Krishna Kashyap">
+          <div class="avatar"><img src="https://i.ibb.co/cSgN5PNw/Screenshot-20251211-121154-Instagram-1.jpg" alt="Krishna Kashyap"></div>
+          <div class="meta">
+            <h4>Krishna Kashyap</h4>
+            <p class="small"><strong>Meta Ads Sales</strong> · IG Growth Strategist</p>
+            <p class="muted small">I know how to grow your business organically through Instagram</p>
+            <div class="socials">
+              <a href="mailto:metasubodh@gmail.com" title="Email">Gmail</a>
+              <a href="https://wa.me/918959660907" title="WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+              <a href="https://www.instagram.com/wifymedia" title="Instagram" target="_blank" rel="noopener">IG</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Varun -->
+        <article class="member" aria-label="Varun Biswas">
+          <div class="avatar"><img src="https://i.ibb.co/4Z8DxJ0x/Screenshot-20251211-121146-Instagram-2.jpg" alt="Varun Biswas"></div>
+          <div class="meta">
+            <h4>Varun Biswas</h4>
+            <p class="small"><strong>Sales and Service</strong> · Client Support</p>
+            <p class="muted small">I will guide and help you about everything related to online marketing</p>
+            <div class="socials">
+              <a href="mailto:metasubodh@gmail.com" title="Email">Gmail</a>
+              <a href="https://wa.me/918959660907" title="WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+              <a href="https://www.instagram.com/wifymedia" title="Instagram" target="_blank" rel="noopener">IG</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section aria-labelledby="pricing-title">
+      <h3 id="pricing-title" style="margin:18px 0 12px;font-size:18px">Our Services and Charges</h3>
+
+      <div class="pricing-wrap" role="region" aria-label="Pricing">
+        <div class="pricing-track" id="pricingTrack" tabindex="0" aria-roledescription="carousel" aria-label="Pricing plans, swipe left or right">
+
+          <!-- MVP -->
+          <div class="price-card small" data-plan="MVP OFFER">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="price-title">MVP OFFER</div>
+                <div class="price-cost">600 rs</div>
+              </div>
+            </div>
+            <ul class="price-list">
+              <li>1 Video Ad</li>
+              <li>2 Campaigns</li>
+              <li>7 Days Support</li>
+            </ul>
+            <a class="price-cta primary" href="#" data-wa-plan="MVP OFFER">Get MVP</a>
+            <div style="font-size:11px;color:var(--muted);margin-top:8px">Some t &amp; c</div>
+          </div>
+
+          <!-- STANDARD -->
+          <div class="price-card" data-plan="STANDARD">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="price-title">STANDARD</div>
+                <div class="price-cost">3000 rs</div>
+              </div>
+            </div>
+
+            <ul class="price-list">
+              <li>1 Video Ad</li>
+              <li>1 Poster Ad</li>
+              <li>5 Campaigns</li>
+              <li>30 Days Support</li>
+              <li>Optimisation & Guidance</li>
+            </ul>
+
+            <a class="price-cta primary" href="#" data-wa-plan="STANDARD">Get STANDARD</a>
+
+          </div>
+
+          <!-- COMBO -->
+          <div class="price-card small" data-plan="COMBO">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="price-title">COMBO</div>
+                <div class="price-cost">15000 rs</div>
+              </div>
+            </div>
+
+            <ul class="price-list">
+              <li>Meta Ads</li>
+              <li>Instagram Growth</li>
+              <li>Full Content</li>
+              <li>Full Growth</li>
+              <li>100% Responsibility</li>
+            </ul>
+
+            <a class="price-cta primary" href="#" data-wa-plan="COMBO">Get COMBO</a>
+          </div>
+
+        </div>
+
+        <p class="small" style="margin-top:14px;color:var(--muted)">Swipe horizontally to view more plans. Manual scroll only.</p>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="why" aria-label="Why choose us">
+      <div class="item">
+        <h4>Committed</h4>
+        <p class="small">We treat every account like it's our own money.</p>
+      </div>
+      <div class="item">
+        <h4>Transparent</h4>
+        <p class="small">Daily reporting and ad-level clarity.</p>
+      </div>
+      <div class="item">
+        <h4>Result-driven</h4>
+        <p class="small">We prioritise ROAS & sales over vanity metrics.</p>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact" aria-label="Contact">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div class="small">Want to work with us?</div>
+        <a class="bigcta wh" href="https://wa.me/918959660907?text=Hello%2C%20I%27m%20interested%20in%20talking%20about%20ads." target="_blank" rel="noopener">MSG NOW — WhatsApp</a>
+        <div class="small muted">metasubodh@gmail.com · +91 89596 60907 · <a href="https://www.instagram.com/wifymedia" target="_blank" rel="noopener">@wifymedia</a></div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="opacity:.9;margin-top:18px">
+        <div style="display:inline-flex;align-items:center;gap:10px">
+          <div style="width:40px;height:40px;border-radius:12px;background:conic-gradient(from 120deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800">W</div>
+          <div style="text-align:left">
+            <div style="font-weight:800">We Serve Like A Wife</div>
+            <div class="small muted">Committed. Caring. Result-Driven.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px" class="small muted">© <span id="year"></span> wifymedia.in — All rights reserved</div>
+    </footer>
+
   </div>
-</section>
 
-<section id="reviews">
-  <div class="container card">
-    <h2>Client Reviews</h2>
-    <div class="grid cols-2 gallery" style="margin-top:14px">
-      <img src="https://i.ibb.co/3mb843nQ/Screenshot-20251106-133503-Instagram.jpg" alt="Review 1">
-      <img src="https://i.ibb.co/Q7TqBzFy/Screenshot-20251106-133444-Instagram.jpg" alt="Review 2">
-    </div>
-  </div>
-</section>
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<section id="video">
-  <div class="container card">
-    <h2>Video Testimonial</h2>
+    // COUNTERS (count-up) - simple
+    const counters = document.querySelectorAll('.stat-num');
+    const speed = 200; // lower = faster
+    const formatNumber = (n) => {
+      if(n >= 100000){ // rupees display with rupee
+        return '₹' + (n).toLocaleString('en-IN');
+      }
+      return n.toLocaleString('en-IN');
+    };
 
-    <div class="video-wrap" style="margin-top:14px">
-      <iframe 
-        src="https://www.youtube.com/embed/myV4Wgl8oTA"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
+    const runCounters = () => {
+      counters.forEach(el => {
+        if (el.dataset.ran) return;
+        const target = Number(el.dataset.target);
+        let start = 0;
+        const step = Math.ceil(target / speed);
+        const id = setInterval(() => {
+          start += step;
+          if (start >= target) {
+            start = target;
+            clearInterval(id);
+            el.dataset.ran = "1";
+          }
+          if (target === 5000000) {
+            el.textContent = '₹' + start.toLocaleString('en-IN');
+          } else {
+            el.textContent = start + (target>9?'+':'');
+          }
+        }, 16);
+      });
+    };
 
-<section>
-  <div class="container card">
-    <h2>Work With Subodh</h2>
-    <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px">
-      <a class="btn brand" href="https://wa.me/918959660907">WhatsApp</a>
-      <a class="btn" href="mailto:metasubodh@gmail.com">metasubodh@gmail.com</a>
-    </div>
-  </div>
-</section>
+    // trigger counters on viewport
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) runCounters();
+      });
+    }, {threshold:0.3});
+    counters.forEach(c=>obs.observe(c));
 
-</main>
 
-<footer>
-  © <span id="y"></span> Meta Ads Services — Subodh
-</footer>
+    // Pricing CTA -> WhatsApp with prefilled message
+    const WA_BASE = "https://wa.me/918959660907?text=";
+    function waEncode(text){ return encodeURIComponent(text); }
 
-<a class="wa-fab" href="https://wa.me/918959660907?text=Hi%20Subodh">
-  <svg viewBox="0 0 32 32" fill="currentColor">
-    <path d="M16 3.5A12.5 12.5 0 0 0 4.23 22.03L3 29l7.12-1.86A12.5 12.5 0 1 0 16 3.5Z"/>
-  </svg>
-</a>
+    document.querySelectorAll('.price-cta').forEach(btn=>{
+      btn.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        const plan = btn.getAttribute('data-wa-plan') || 'STANDARD';
+        const message = `Hello, I want the ${plan} plan. Please share next steps.`;
+        const link = WA_BASE + waEncode(message);
+        window.open(link, '_blank');
+      });
+    });
 
-<script>
-document.getElementById("y").innerText = new Date().getFullYear();
+    // Improve scrolling snap focus behavior (nice keyboard arrows)
+    const track = document.getElementById('pricingTrack');
+    track.addEventListener('keydown', e=>{
+      const left = e.key === 'ArrowLeft';
+      const right = e.key === 'ArrowRight';
+      if(left || right){
+        e.preventDefault();
+        const width = track.clientWidth;
+        track.scrollBy({left: left? -width*0.6 : width*0.6, behavior:'smooth'});
+      }
+    });
 
-/* phone-only hamburger logic */
-(function(){
-  const ham = document.getElementById("hamburger");
-  const menu = document.getElementById("mobileNav");
-  if (!ham || !menu) return;
+    // mobile: snap to center after scroll end (small helper)
+    let isScrolling;
+    track.addEventListener('scroll', function(){
+      window.clearTimeout(isScrolling);
+      isScrolling = setTimeout(function(){
+        // snap to closest child
+        const cards = Array.from(track.querySelectorAll('.price-card'));
+        const center = track.scrollLeft + (track.clientWidth/2);
+        let closest = cards[0];
+        let minDist = Infinity;
+        cards.forEach(c=>{
+          const rect = c.getBoundingClientRect();
+          const cCenter = (c.offsetLeft + c.offsetWidth/2);
+          const dist = Math.abs(cCenter - center - track.scrollLeft);
+          if(dist < minDist){ minDist = dist; closest = c; }
+        });
+        closest.scrollIntoView({behavior:'smooth', inline:'center'});
+      }, 120);
+    }, false);
 
-  function closeMenu(){
-    ham.classList.remove("open");
-    menu.classList.remove("active");
-  }
+    // Accessibility: allow click on price-card area to select
+    document.querySelectorAll('.price-card').forEach(card=>{
+      card.addEventListener('click', (e)=>{
+        // If user clicked CTA ignore (handled)
+        const p = card.getAttribute('data-plan') || 'STANDARD';
+        // scroll card to center
+        card.scrollIntoView({behavior:'smooth', inline:'center'});
+      });
+    });
 
-  ham.addEventListener("click", (e)=>{
-    e.stopPropagation();
-    ham.classList.toggle("open");
-    menu.classList.toggle("active");
-  });
+    // Prevent accidental horizontal drag text select
+    track.addEventListener('mousedown', (e)=> e.preventDefault());
 
-  document.addEventListener("click", (e)=>{
-    if(!e.target.closest("nav")) closeMenu();
-  });
-})();
-</script>
-
+  </script>
 </body>
-</html>
+  </html>
